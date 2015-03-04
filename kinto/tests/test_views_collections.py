@@ -1,11 +1,5 @@
-from .support import BaseWebTest, unittest
-from base64 import b64encode
+from .support import BaseWebTest, unittest, get_user_headers
 
-
-def get_user_headers(user):
-    return {
-        'Authorization': 'Basic {0}'.format(b64encode("%s:secret" % user)),
-    }
 
 MINIMALIST_ITEM = dict(name="Hulled Barley",
                        type="Whole Grain")

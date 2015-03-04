@@ -1,3 +1,4 @@
+from base64 import b64encode
 try:
     import unittest2 as unittest
 except ImportError:
@@ -20,6 +21,7 @@ class BaseWebTest(cliquet_support.BaseWebTest):
             'cliquet.project_name': 'cloud storage',
             'cliquet.project_docs': 'https://kinto.rtfd.org/',
             'cliquet.basic_auth_enabled': 'true',
+            'cliquet.userid_hmac_secret': 'b4c96a8692291d88fe5a97dd91846eb4',
             'cliquet.storage_backend': 'cliquet.storage.redis',
             'cliquet.session_backend': 'cliquet.session.redis',
             'fxa-oauth.client_id': '89513028159972bc',
@@ -28,3 +30,9 @@ class BaseWebTest(cliquet_support.BaseWebTest):
             'fxa-oauth.oauth_uri': 'https://oauth-stable.dev.lcip.org',
             'fxa-oauth.scope': 'profile'
         }
+
+
+def get_user_headers(user):
+    return {
+        'Authorization': 'Basic {0}'.format(b64encode("%s:secret" % user)),
+    }
