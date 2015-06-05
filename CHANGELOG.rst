@@ -4,10 +4,16 @@ Changelog
 This document describes changes between each past release.
 
 
-0.2.2 (unreleased)
+1.0.0 (unreleased)
 ==================
 
-- Upgraded to *cliquet* 1.7.0
+- Nothing changed yet.
+
+
+0.2.2 (2015-06-04)
+==================
+
+- Upgraded to *cliquet* 1.8.+
 
 **Breaking changes**
 
@@ -18,6 +24,11 @@ This document describes changes between each past release.
 
     cliquet --ini config/kinto.ini migrate
 
+**Internal changes**
+
+- Improved documentation (#29)
+- Require 100% coverage during tests (#27)
+- Basic Auth is now enabled by default in example config
 
 
 0.2.1 (2015-03-25)
